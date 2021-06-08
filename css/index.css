@@ -1,0 +1,155 @@
+body {
+  background-color: black;
+}
+.fix::before,
+.fix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.head {
+  width: 100%;
+  height: 100px;
+  background-color: cadetblue;
+  position: relative;
+  z-index: 100;
+  top: 0;
+  transition: all 1s;
+}
+.head .nav {
+  width: 100%;
+  height: 25px;
+  margin-top: 75px;
+  text-align: center;
+}
+.head .nav li {
+  display: inline-block;
+  background-color: salmon;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  margin: 0 20px;
+}
+.head .nav_bt {
+  width: 80px;
+  height: 80px;
+  background-color: #eed1b8;
+  position: absolute;
+  z-index: -1;
+  margin: 0 auto;
+  border-radius: 50%;
+  top: 60px;
+  left: 0;
+  right: 0;
+}
+.center {
+  width: 90%;
+  height: 400px;
+  background-color: sandybrown;
+  margin: 40px auto 0;
+  position: relative;
+  transition: all 1s;
+}
+.center .c_left {
+  width: 100px;
+  height: s;
+  background-color: seagreen;
+  margin: 10px 0 0 10px  ;
+  position: relative;
+  float: left;
+}
+.center .c_left li {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: seashell;
+  position: relative;
+}
+.center .c_left a:hover ~ #wang_game {
+  width: 250px;
+}
+.center .c_left #wang_game {
+  width: 0;
+  height: 300px;
+  background-color: skyblue;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 100px;
+  transition: all 1s;
+}
+.center .c_left #wang_game:hover {
+  width: 250px;
+}
+.center .c_right {
+  width: auto;
+  height: 240px;
+  background-color: cadetblue;
+  margin: 10px 10px 0 120px;
+  position: relative;
+}
+.center .c_right .r_b1 {
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+  background-color: #3f342c;
+  margin: 70px 140px 0;
+  float: left;
+  position: absolute;
+}
+.center .c_right .r_b1 img {
+  width: 100px;
+  height: 100px;
+  vertical-align: top;
+}
+.center .c_right .r_b1 div {
+  width: 100px;
+  height: 100px;
+  opacity: 0.5;
+  position: absolute;
+}
+.center .c_right .r_b1 .img1 {
+  transform: rotateY(0deg) translateZ(50px);
+}
+.center .c_right .r_b1 .img2 {
+  transform: rotateY(180deg) translateZ(50px);
+}
+.center .c_right .r_b1 .img3 {
+  transform: rotateY(90deg) translateZ(50px);
+}
+.center .c_right .r_b1 .img4 {
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.center .c_right .r_b1 .img5 {
+  transform: rotateX(90deg) translateZ(50px);
+}
+.center .c_right .r_b1 .img6 {
+  transform: rotateX(-90deg) translateZ(50px);
+}
+.center .c_right .lunbo_box {
+  width: auto;
+  height: 240px;
+  background-color: blueviolet;
+  margin: 0 70px;
+}
+.center .c_right .lunbo_box div {
+  width: calc(100% / 3);
+  height: 240px;
+  position: absolute;
+}
+.center .c_right .lunbo_box .lb_1 {
+  background-color: salmon;
+}
+@keyframes rotate {
+  form {
+    transform: rotateX(0) rotateZ(0) rotateY(0);
+  }
+  to {
+    transform: rotateX(1turn) rotateZ(1turn);
+  }
+}

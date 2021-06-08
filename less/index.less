@@ -1,0 +1,160 @@
+.box(@w,@h){
+    width : @w;
+    height : @h;
+}
+body{
+    background-color: black;
+}
+.fix::before,.fix::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.head{
+    .box(100%,100px);
+    background-color: cadetblue;
+    position: relative;
+    z-index: 100;
+    top: 0;
+    transition: all 1s;
+    .nav{
+        .box(100%,25px);
+        margin-top:75px;
+        text-align: center;
+        li{
+            display: inline-block;
+            background-color: salmon;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin:0 20px;
+        }
+    }
+    .nav_bt{
+        .box(80px,80px);
+        background-color: rgb(238, 209, 184);
+        position: absolute;
+        z-index: -1;
+        margin: 0 auto;
+        border-radius: 50%;
+        top:60px;
+        left: 0;
+        right: 0;
+    }
+}
+.center{
+    .box(90%,400px);
+    background-color: sandybrown;
+    margin: 40px auto 0;
+    position: relative;
+    transition: all 1s;
+    .c_left{
+        .box(100px,s);
+        background-color: seagreen;
+        margin: 10px 0 0 10px  ;
+        position: relative;
+        float: left;
+        li{
+            display: inline-block;
+            .box(100px,50px);
+            line-height: 50px;
+            margin-bottom: 10px;
+            text-align: center;
+            background-color: seashell;
+            position: relative;
+        }
+        a:hover ~ #wang_game{
+            width: 250px;
+        }
+        #wang_game{
+            .box(0,300px);
+            background-color:skyblue;
+            position: absolute;
+            z-index: 999;
+            top:0;
+            left: 100px;
+            transition: all 1s;
+            &:hover{
+                width: 250px;
+            }
+        }
+    }
+    .c_right{
+        .box(auto,240px);
+        background-color: cadetblue;
+        margin: 10px 10px 0 120px;
+        position: relative;
+        // overflow: auto;
+        .r_b1{
+            .box(100px,100px);
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+            background-color: rgb(63, 52, 44);
+            margin:70px 140px 0;
+            float: left;
+            position: absolute;
+            img{
+                .box(100px,100px);
+                vertical-align: top;
+            }
+            div{
+                .box(100px,100px);
+                opacity: .5;
+                position: absolute;
+            }
+            .img1{
+                transform: rotateY(0deg) translateZ(50px);
+            }
+            .img2{
+                transform: rotateY(180deg) translateZ(50px);
+            }
+            .img3{
+                transform: rotateY(90deg) translateZ(50px);
+            }
+            .img4{
+                transform: rotateY(-90deg) translateZ(50px);
+            }
+            .img5{
+                transform: rotateX(90deg) translateZ(50px);
+            }
+            .img6{
+                transform: rotateX(-90deg) translateZ(50px);
+            }
+        }
+        // .rg_b1{
+        //     .box(100px,100px);
+        //     background-color: chartreuse;
+        //     position: absolute;
+        //     margin:70px 140px 0;
+        //     opacity: .3;
+        //     // transform: translateZ(-500px);
+            
+        // }
+        .lunbo_box{
+            // position:absolute;
+            // left: 0;
+            // top:0;
+            .box(auto,240px);
+            background-color: blueviolet;
+            margin:0 70px;
+            div{
+                .box(~"calc(100% / 3)",240px);
+                position: absolute;
+            }
+            .lb_1{
+                background-color: salmon;
+                // left: ;
+            }
+        }
+    }
+}
+@keyframes rotate {
+    form{
+        transform:rotateX(0) rotateZ(0) rotateY(0)
+    }
+
+    to{
+        transform:rotateX(1turn) rotateZ(1turn)
+    }
+}

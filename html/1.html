@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,
+    h4,h5,h6,pre,code,form,fieldset,
+    legend,input,textarea,p,blockquote,th,td,em,button{
+        margin:0;
+        padding:0;
+    }
+    .wrap{background:#1158e7 url(images/bg.jpg) no-repeat center bottom;
+        width:100%;
+        overflow:hidden;}
+    .content,.text,#footer{
+        width:800px;
+    }
+    .content{
+        position:relative;
+        z-index:1;
+        height:480px;
+        margin:0 auto;
+        padding-top:100px;}
+    .content,.text,#footer{width:320px;}
+    .content { height: 500px;padding-top: 20px;}
+    .miscbox{position: relative;z-index: -1;height: 264px;width: 116px;margin: 0 auto;}
+    .logo,.tower,.cruise{background:url(images/un_pic.png) no-repeat;}
+    .tower{background-position:0 -127px;position:absolute;z-index:2;top:140px;left:20px;width:116px;height:264px;}
+    .tower{left: 0;top: 0; }   
+    .towerlight{
+        position:absolute;
+        z-index:1;
+        left:52px;
+        top:166px;
+        width:52px;
+        height:52px;
+        background-color:#fefa90;
+        /* box-shadow:0 0 50px rgba(255,248,74,1); */
+        -webkit-animation:3s linear 0s none infinite light;
+        -moz-animation:3s linear 0s none infinite light;
+        animation:3s linear 0s none infinite light;}
+    /* .towerlight {left: 32px;top: 30px;} */
+    .beam{position:absolute;z-index:3;left:-232px;top:75px;width:973px;height:198px;background:url(images/beam.png) no-repeat;-webkit-transform:rotate(15deg);transform:rotate(15deg);-webkit-transform-origin:308px 115px;transform-origin:308px 115px;-webkit-animation:10s linear 0s none infinite beam;-moz-animation:10s linear 0s none infinite beam;animation:10s linear 0s none infinite beam;}
+    @keyframes beam{0%{transform:rotate(15deg);}50%{transform:rotate(65deg);}100%{transform:rotate(15deg);}}
+    .beam {left: -255px;top: -62px;}
+    @keyframes light{0%{box-shadow:0 0 50px rgba(255,254,165,1);}50%{box-shadow:0 0 10px rgba(255,248,74,1);}100%{box-shadow:0 0 50px rgba(255,254,165,1);}}
+
+
+
+    body{
+        font-size:12px;
+    font-family:Simsun,sans-serif;
+    color:#333;
+    background-color: #1158e7;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrap">    
+        <div class="content">      
+            <!-- <div class="text">         
+                <p>人生在旅途，需要您的指引</p>      
+            </div>       -->
+            <!-- <div class="miscbox">          -->
+                <!-- <div class="tower"></div>          -->
+                <div class="towerlight"></div>         
+                <!-- <div class="beam"></div>       -->
+            <!-- </div>    -->
+        </div>   
+        <!-- <div class="wave1">     
+            <div class="wave">
+        
+            </div>    
+        </div> -->
+    </div>
+    <img src="../img/yazi2.gif">
+</body>
+</html>

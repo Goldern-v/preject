@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>js实现3D图片逐张轮播幻灯片</title>
+        <style>
+            *{
+	margin: 0;
+	padding: 0;
+}
+.banner{
+	width: 100%;
+	height: 3rem;
+	position: relative;
+	overflow: hidden;
+	padding:.2rem;
+	box-sizing: border-box;
+	margin-top: 1rem;
+	font-size: .1rem;
+}
+.banner .banner_li,.banner .banner_li img{
+	width: 100%;
+	height: 2.58rem;
+	transition: all 0.3s ease 0s;
+}
+.banner .banner_li{
+	position: absolute;
+	left: 0;
+	top: .21rem;
+	
+}
+ .left img{
+ 	transform: scale(.256,.88) translateX(-122%);
+ }
+ .active{
+ 	transform: scale(.352,1);
+ 	z-index: 2;
+ 	/*box-shadow: 0 0 .2rem red;*/
+ }
+.right img{
+	transform: scale(.256,.88)  translateX(122%);
+}
+
+            </style>
+            </head>
+            <body>
+                <div class="banner">
+                    <div class="banner_li left">
+                        <img src="../img/1.jpg" />
+                    </div>
+                    <div class="banner_li active">
+                        <img src="../img/3.jpg" />
+                    </div>
+                    <div class="banner_li right">
+                        <img src="../img/2.jpg" />
+                    </div>
+                </div>
+            <script type="text/javascript" src="../js/jquery-1.10.1.js"></script>
+            <script>
+           $(function() {
+			var dis, startX, moveX, endX, current_index = 0,
+				touchflag = true,num=0;
+			$('.banner').on('touchstart', function(e) {
+				startX = e.originalEvent.changedTouches[0].pageX;
+			});
+			$('.banner').on('touchmove', function(e) {
+				moveX = e.originalEvent.changedTouches[0].pageX;
+				dis = moveX - startX;
+				if(touchflag){
+					touchflag=false
+					if(dis > 2) {
+						console.log('上一张',current_index);
+						if(current_index == 0) {
+							current_index = $('.banner_li').length - 1;
+							$('.banner .banner_li:eq(' + current_index + ')').removeClass('right').addClass('left').prev().removeClass('active').addClass('right');
+							$('.banner .banner_li:eq(' + current_index + ')').prev().prev().removeClass('left').addClass('active');
+						} else {
+							current_index--;
+							$('.banner .banner_li:eq(' + current_index + ')').removeClass('right').addClass('left');
+							$('.banner .banner_li:eq(' + current_index + ')').next().removeClass('left').addClass('active');
+							$('.banner .banner_li:eq(' + current_index + ')').next().next().removeClass('active').addClass('right')
+							$('.banner .banner_li:eq(' + current_index + ')').prev().removeClass('active').addClass('right');
+						}
+					} else if(dis < -2) {
+						console.log('下一张')
+						if(current_index==2){
+							current_index=0;
+							$('.banner .banner_li:eq(' + current_index + ')').removeClass('active').addClass('left');
+							$('.banner .banner_li:eq(' + current_index + ')').next().removeClass('right').addClass('active');
+							$('.banner .banner_li:eq(' + current_index + ')').next().next().removeClass('left').addClass('right');
+						}else{
+							current_index++;
+							$('.banner .banner_li:eq(' + current_index + ')').removeClass('active').addClass('left');
+							$('.banner .banner_li:eq(' + current_index + ')').next().removeClass('right').addClass('active');
+							$('.banner .banner_li:eq(' + current_index + ')').prev().removeClass('left').addClass('right');
+							$('.banner .banner_li:eq(' + current_index + ')').prev().prev().removeClass('right').addClass('active');
+						}
+					}
+				}
+			});
+			$('.banner').on('touchend', function(e) {
+				endX = e.originalEvent.changedTouches[0].pageX;
+				touchflag=true
+				console.log(num++,current_index)
+			})
+		})
+            </script>
+            </body>
+            </html>
+           
